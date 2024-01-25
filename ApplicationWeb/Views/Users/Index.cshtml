@@ -1,0 +1,176 @@
+﻿
+@{
+    ViewData["Title"] = "User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>User</h1>
+
+
+<!-- DataTables Example -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3 bg-second-primary">
+        <h6 class="m-0 font-weight-bold text-white">User List</h6>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-sm-3">
+                <button class="btn btn-success" data-toggle="modal" data-target="#modalData"><i class="fas fa-user-plus"></i> New User</button>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-bordered" id="tbdata" cellspacing="0" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Photo</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><img style="height:60px ;" src="https://images.unsplash.com/photo-1519648023493-d82b5f8d7b8a?w=300" class="rounded mx-auto d-block" /></td>
+                            <td>Tiger Nixon</td>
+                            <td>System Architect</td>
+                            <td>Edinburgh</td>
+                            <td>61</td>
+                            <td><span class="badge badge-info">Active</span></td>
+                            <td>
+                                <button class="btn btn-primary btn-sm">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </button>
+                                <button class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><img style="height:60px ;" src="https://images.unsplash.com/photo-1519648023493-d82b5f8d7b8a?w=300" class="rounded mx-auto d-block" /></td>
+                            <td>Garrett Winters</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td>63</td>
+                            <td><span class="badge badge-danger">Not Active</span></td>
+                            <td>
+                                <button class="btn btn-primary btn-sm">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </button>
+                                <button class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--  Modal-->
+<div class="modal fade" id="modalData" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6>User Details</h6>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <input type="hidden" value="0" id="txtId">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="form-row">
+                                <div class="form-group col-sm-6">
+                                    <label for="txtName">Name</label>
+                                    <input type="text" class="form-control form-control-sm input-validate" id="txtName" name="Name">
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="txtEmail">Email</label>
+                                    <input type="email" class="form-control form-control-sm input-validate" id="txtEmail" name="Email">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-sm-6">
+                                    <label for="txtPhone">Phone</label>
+                                    <input type="text" class="form-control form-control-sm input-validate" id="txtPhone" name="Phone">
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="cboRole">Role</label>
+                                    <select class="form-control form-control-sm" id="cboRole">
+                                        <option value="1">Administrator</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-sm-6">
+                                    <label for="cboStatus">Status</label>
+                                    <select class="form-control form-control-sm" id="cboStatus">
+                                        <option value="1">Active</option>
+                                        <option value="0">Not Active</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="txtPhoto">Photo</label>
+                                    <input class="form-control-file" type="file" id="txtPhoto" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <img id="imgUser" style="max-width:200px;" src="https://images.unsplash.com/photo-1519648023493-d82b5f8d7b8a?w=300" class="rounded mx-auto d-block" alt="User Photo">
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary btn-sm" type="button" id="btnSave">Save</button>
+                <button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+@section Scripts {
+  <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <script src="vendor/datatables/extensiones/js/dataTables.responsive.min.js"></script>
+
+    <script src="vendor/datatables/extensiones/js/dataTables.buttons.min.js"></script>
+    <script src="vendor/datatables/extensiones/js/jszip.min.js"></script>
+    <script src="vendor/datatables/extensiones/js/buttons.html5.min.js"></script>
+    <script src="vendor/datatables/extensiones/js/buttons.print.min.js"></script>
+
+    <!-- SOLO ES DE EJEMPLO - IGNORAR -->
+    <script src="js/vistas/datatables-demo.js"></script>
+
+}
+
+
+@section Style{
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+
+    <link href="css/sb-admin-2.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="vendor/datatables/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="vendor/datatables/extensions/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="vendor/datatables/extensions/css/buttons.dataTables.min.css">
+
+}

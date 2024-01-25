@@ -1,0 +1,14 @@
+E:\Descargar\RAMDOS\ProyectCichar\Proyect\SalesStore\Entity\bin\Debug\net8.0\Entity.deps.json
+E:\Descargar\RAMDOS\ProyectCichar\Proyect\SalesStore\Entity\bin\Debug\net8.0\Entity.runtimeconfig.json
+E:\Descargar\RAMDOS\ProyectCichar\Proyect\SalesStore\Entity\bin\Debug\net8.0\Entity.dll
+E:\Descargar\RAMDOS\ProyectCichar\Proyect\SalesStore\Entity\bin\Debug\net8.0\Entity.pdb
+E:\Descargar\RAMDOS\ProyectCichar\Proyect\SalesStore\Entity\obj\Debug\net8.0\Entity.csproj.AssemblyReference.cache
+E:\Descargar\RAMDOS\ProyectCichar\Proyect\SalesStore\Entity\obj\Debug\net8.0\Entity.GeneratedMSBuildEditorConfig.editorconfig
+E:\Descargar\RAMDOS\ProyectCichar\Proyect\SalesStore\Entity\obj\Debug\net8.0\Entity.AssemblyInfoInputs.cache
+E:\Descargar\RAMDOS\ProyectCichar\Proyect\SalesStore\Entity\obj\Debug\net8.0\Entity.AssemblyInfo.cs
+E:\Descargar\RAMDOS\ProyectCichar\Proyect\SalesStore\Entity\obj\Debug\net8.0\Entity.csproj.CoreCompileInputs.cache
+E:\Descargar\RAMDOS\ProyectCichar\Proyect\SalesStore\Entity\obj\Debug\net8.0\Entity.dll
+E:\Descargar\RAMDOS\ProyectCichar\Proyect\SalesStore\Entity\obj\Debug\net8.0\refint\Entity.dll
+E:\Descargar\RAMDOS\ProyectCichar\Proyect\SalesStore\Entity\obj\Debug\net8.0\Entity.pdb
+E:\Descargar\RAMDOS\ProyectCichar\Proyect\SalesStore\Entity\obj\Debug\net8.0\Entity.genruntimeconfig.cache
+E:\Descargar\RAMDOS\ProyectCichar\Proyect\SalesStore\Entity\obj\Debug\net8.0\ref\Entity.dll

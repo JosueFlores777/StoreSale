@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewData["Title"] = "Sale Report";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3 bg-second-primary">
+        <h6 class="m-0 font-weight-bold text-white">Sales Report</h6>
+    </div>
+    <div class="card-body">
+        <div class="form-row align-items-end">
+            <div class="form-group col-sm-3">
+                <label for="txtStartDate">Start Date</label>
+                <input type="text" class="form-control form-control-sm" id="txtStartDate">
+            </div>
+            <div class="form-group col-sm-3">
+                <label for="txtEndDate">End Date</label>
+                <input type="text" class="form-control form-control-sm" id="txtEndDate">
+            </div>
+            <div class="form-group col-sm-3">
+                <button type="button" class="btn btn-primary btn-block btn-sm" id="btnSearch"><i class="fas fa-search"></i> Search</button>
+            </div>
+        </div>
+
+        <hr />
+        <div class="row">
+            <div class="col-sm-12">
+                <table id="dataTable" class="table table-sm table-striped" cellspacing="0" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th scope="col">Registration Date</th>
+                            <th scope="col">Sale Number</th>
+                            <th scope="col">Document Type</th>
+                            <th scope="col">Customer Document</th>
+                            <th scope="col">Customer Name</th>
+                            <th scope="col">Subtotal Sale</th>
+                            <th scope="col">Sale Tax</th>
+                            <th scope="col">Total Sale</th>
+                            <th scope="col">Product</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+ @section Style{
+    <link rel="stylesheet" href="~/vendor/datatables/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/vendor/datatables/extensions/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" href="~/vendor/datatables/extensions/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="~/vendor/jquery-ui/jquery-ui.css">
+ }
+
+ @section Scripts{
+    <script src="~/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <script src="~/vendor/datatables/extensions/js/dataTables.responsive.min.js"></script>
+
+    <script src="~/vendor/datatables/extensions/js/dataTables.buttons.min.js"></script>
+    <script src="~/vendor/datatables/extensions/js/jszip.min.js"></script>
+    <script src="~/vendor/datatables/extensions/js/buttons.html5.min.js"></script>
+    <script src="~/vendor/datatables/extensions/js/buttons.print.min.js"></script>
+
+    <script src="~/vendor/jquery-ui/jquery-ui.js"></script>
+    <script src="~/vendor/jquery-ui/language/datepicker-en.js"></script>
+
+
+ }

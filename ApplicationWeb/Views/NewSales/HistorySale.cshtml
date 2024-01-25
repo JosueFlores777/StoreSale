@@ -1,0 +1,161 @@
+﻿@{
+    ViewData["Title"] = "Sales History";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3 bg-second-primary">
+        <h6 class="m-0 font-weight-bold text-white">Sales History</h6>
+    </div>
+    <div class="card-body">
+        <div class="form-row align-items-end">
+            <div class="form-group col-sm-3">
+                <label for="cboSearchBy">Search by</label>
+                <select class="form-control form-control-sm" id="cboSearchBy">
+                    <option value="date">Dates</option>
+                    <option value="number">Sale Number</option>
+                </select>
+            </div>
+            <div class="form-group col-sm-3 search-date">
+                <label for="txtStartDate">Start Date</label>
+                <input type="text" class="form-control form-control-sm" id="txtStartDate">
+            </div>
+            <div class="form-group col-sm-3 search-date">
+                <label for="txtEndDate">End Date</label>
+                <input type="text" class="form-control form-control-sm" id="txtEndDate">
+            </div>
+            <div class="form-group col-sm-3 search-sale">
+                <label for="txtSaleNumber">Sale Number</label>
+                <input type="text" class="form-control form-control-sm" id="txtSaleNumber">
+            </div>
+            <div class="form-group col-sm-3">
+                <button class="btn btn-success btn-block btn-sm" type="button" id="btnSearch"><i class="fas fa-search"></i> Search</button>
+            </div>
+        </div>
+
+        <hr />
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table table-sm table-striped" id="salesTable">
+                    <thead>
+                        <tr>
+                            <th>Registration Date</th>
+                            <th>Sale Number</th>
+                            <th>Document Type</th>
+                            <th>Client Document</th>
+                            <th>Client Name</th>
+                            <th>Total</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>27/04/2022</td>
+                            <td>00001</td>
+                            <td>Receipt</td>
+                            <td>101010</td>
+                            <td>jose</td>
+                            <td>2000</td>
+                            <td><button class="btn btn-info btn-sm" data-toggle="modal" data-target="#dataModal"><i class="fas fa-eye"></i> View Details</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--  Modal-->
+<div class="modal fade" id="dataModal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6>Sale Details</h6>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-row">
+                                <div class="form-group col-sm-4">
+                                    <label for="txtRegistrationDate">Registration Date</label>
+                                    <input type="text" class="form-control form-control-sm" id="txtRegistrationDate" disabled>
+                                </div>
+                                <div class="form-group col-sm-4">
+                                    <label for="txtSaleNumber">Sale Number</label>
+                                    <input type="text" class="form-control form-control-sm" id="txtSaleNumber" disabled>
+                                </div>
+                                <div class="form-group col-sm-4">
+                                    <label for="txtUserRegistration">User Registration</label>
+                                    <input type="text" class="form-control form-control-sm" id="txtUserRegistration" disabled>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-sm-4">
+                                    <label for="txtDocumentType">Document Type</label>
+                                    <input type="text" class="form-control form-control-sm" id="txtDocumentType" disabled>
+                                </div>
+                                <div class="form-group col-sm-4">
+                                    <label for="txtClientDocument">Client Document</label>
+                                    <input type="text" class="form-control form-control-sm" id="txtClientDocument" disabled>
+                                </div>
+                                <div class="form-group col-sm-4">
+                                    <label for="txtClientName">Client Name</label>
+                                    <input type="text" class="form-control form-control-sm" id="txtClientName" disabled>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-sm-4">
+                                    <label for="txtSubTotal">Sub Total</label>
+                                    <input type="text" class="form-control form-control-sm" id="txtSubTotal" disabled>
+                                </div>
+                                <div class="form-group col-sm-4">
+                                    <label for="txtVAT">VAT</label>
+                                    <input type="text" class="form-control form-control-sm" id="txtVAT" disabled>
+                                </div>
+                                <div class="form-group col-sm-4">
+                                    <label for="txtTotal">Total</label>
+                                    <input type="text" class="form-control form-control-sm" id="txtTotal" disabled>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <table id="productTable" class="table table-sm table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Product</th>
+                                                <th>Quantity</th>
+                                                <th>Price</th>
+                                                <th>Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-primary btn-sm" target="_blank" id="printLink">Print</a>
+                <button class="btn btn-danger btn-sm" type="button" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section Style {
+    <link href="~/vendor/jquery-ui/jquery-ui.css" rel="stylesheet">
+}
+
+@section Scripts {
+    <script src="~/vendor/jquery-ui/jquery-ui.js"></script>
+    <script src="~/vendor/jquery-ui/idioma/datepicker-es.js"></script>
+  
+
+}
