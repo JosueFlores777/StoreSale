@@ -30,24 +30,60 @@ namespace DataAccessLayer.Implementation
                 throw;
             }
         }
-        public Task<TEntity> Create(TEntity entity)
+        public  async Task<TEntity> Create(TEntity entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                dBContext.Set <TEntity>().Add(entity);
+                await dBContext.SaveChangesAsync();
+                return entity;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
-        public Task<bool> Delete(TEntity entity)
+        public async Task<bool> Delete(TEntity entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                dBContext.Update(entity);
+                await dBContext.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
-        public Task<bool> Edit(TEntity entity)
+        public async Task<bool> Edit(TEntity entity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                dBContext.Remove(entity);
+                await dBContext.SaveChangesAsync();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
-        public Task<IQueryable<TEntity>> GetInformation(Expression<Func<TEntity, bool>> filter = null)
+        public async Task<IQueryable<TEntity>> GetInformation(Expression<Func<TEntity, bool>> filter = null)
         {
-            throw new NotImplementedException();
+            try
+            {
+                IQueryable<TEntity> queryEnity = filter == null ? dBContext.Set<TEntity>() : dBContext.Set<TEntity>().Where(filter);
+
+                return queryEnity;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
     }
 }

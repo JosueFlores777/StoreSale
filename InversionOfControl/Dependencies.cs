@@ -7,9 +7,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using DataAccessLayer.DBContext;
 using Microsoft.EntityFrameworkCore;
-/*using DataAccessLayer.Interfaces;
+using DataAccessLayer.Interfaces;
 using DataAccessLayer.Implementation;
-using BusinessLogicLayer.Implementation;
+/*using BusinessLogicLayer.Implementation;
 using BusinessLogicLayer.Interfaces;
 */
 namespace InversionOfControl
@@ -22,7 +22,10 @@ namespace InversionOfControl
                 options.UseSqlServer(configuration.GetConnectionString("StringConnection"));
 
             });
-        
+            
+            service.AddTransient(typeof(IGenericRepository<>),typeof(GenereciReposity<>));
+
+            service.AddScoped<ISaleRepository, SaleRepository>();
         }
 
     }
